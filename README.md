@@ -10,7 +10,7 @@
 ## Install
 
 ```bash
-curl -s https://raw.githubusercontent.com/YOUR_USERNAME/trinity-embernode/main/trinity_bootstrap.sh | bash
+curl -s https://raw.githubusercontent.com/ccncio/trinity-embernode/main/trinity_bootstrap.sh | bash
 ```
 
 ## Usage (inside Proot Debian)
