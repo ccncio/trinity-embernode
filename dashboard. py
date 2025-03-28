@@ -1,0 +1,19 @@
+from flask import Flask, render_template_string
+import os
+
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    logs = "No logs found."
+    path = os.path.expanduser("~/.trinity_core/logs/fs_events.log")
+    if os.path.exists(path):
+        with open(path) as f:
+            logs = f.read()[-1000:]
+    return render_template_string("""
+        <h2>Trinity Dashboard</h2>
+        <pre>{{ logs }}</pre>
+    """, logs=logs)
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8080)
